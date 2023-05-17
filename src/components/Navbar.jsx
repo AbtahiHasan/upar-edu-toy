@@ -13,9 +13,9 @@ const Navbar = () => {
     const {user, logOut} = useAuth()
     return (
         <nav className="container flex justify-between py-4">
-            <div className="flex items-center gap-3">
+            <Link className="flex items-center gap-3">
             <img className="h-[35px]" src={logo} alt="" /> <h3 className="text-2xl font-bold">UparEduToy</h3>
-            </div>
+            </Link>
             <span className="md:hidden text-xl">
                     {
                        toggle ? <IoMdClose onClick={() => setToggle(!toggle)} /> : <HiOutlineMenuAlt2  onClick={() => setToggle(!toggle)} />
@@ -23,13 +23,13 @@ const Navbar = () => {
                 </span>
                 <ul className={`flex items-center duration-200 z-50 flex-col py-5 md:p-0 text-white bg-opacity-80 md:text-black top-14 bg-black md:bg-transparent w-full md:w-auto md:flex-row gap-3 absolute md:static ${toggle ? "left-0" : "-left-full"}`}>
                     <li>
-                        <NavLink to="/" className={({ isActive }) => isActive ? "active px-5 rounded-full" : " px-5 rounded-full"}>Home</NavLink>
+                        <NavLink onClick={() => setToggle(!toggle)} to="/" className={({ isActive }) => isActive ? "active px-5 rounded-full" : " px-5 rounded-full"}>Home</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/blog" className={({ isActive }) => isActive ? "active px-5 rounded-full" : " px-5 rounded-full"}>Blog</NavLink>
+                        <NavLink onClick={() => setToggle(!toggle)} to="/blog" className={({ isActive }) => isActive ? "active px-5 rounded-full" : " px-5 rounded-full"}>Blog</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/register" className={({ isActive }) => isActive ? "active px-5 rounded-full" : " px-5 rounded-full"}>Register</NavLink>
+                        <NavLink onClick={() => setToggle(!toggle)} to="/register" className={({ isActive }) => isActive ? "active px-5 rounded-full" : " px-5 rounded-full"}>Register</NavLink>
                     </li>
                      <li>{
                             user?.photoURL ? <img className="w-[35px] h-[35px] rounded-full" src={user?.photoURL} title={user.displayName} alt="" /> : ""
