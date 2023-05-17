@@ -36,7 +36,7 @@ const Navbar = () => {
                         }
                     </li>
                     <li>{
-                            user ? <button onClick={logOut} className="bg-[#289944] px-4 py-2 flex items-center gap-2 text-white "><AiOutlineLogin/> LogOut</button> : <button><Link className="flex items-center gap-2" to="/login"> <AiOutlineLogin/>  Login</Link></button>
+                            user ? <button onClick={logOut} className="border-[#00abe4] text-[#00abe4] px-4 py-2 flex items-center gap-2  border rounded p-3"><AiOutlineLogin/> LogOut</button> : <button><Link className="flex items-center gap-2 border rounded p-3 border-[#00abe4] text-[#00abe4]" to="/login"> <AiOutlineLogin/>  Login</Link></button>
                         }
                     </li>
                     
