@@ -1,14 +1,15 @@
 import { Link } from 'react-router-dom';
 import { FcGoogle } from "react-icons/fc";
 import bgImage from '/math-banner.jpg'
-
+import { useState } from 'react';
+import { AiFillEyeInvisible,AiFillEye  } from "react-icons/ai";
 
 
 
 
 
 const Login = () => {
-    
+    const [showPassword, setShowPassword] = useState(true)
     
     
     return (
@@ -22,11 +23,18 @@ const Login = () => {
                 <form >
                     <div className='flex flex-col my-4'>
                         <label htmlFor="email" className='my-2 text-[17px]'>Email</label>
-                        <input type="email" name="email" id="email" className='border rounded py-2 px-4 outline-none text-base' autoComplete='off' placeholder='email' required/>
+                        <input type="email" name="email" id="email" className='border-b-2 rounded py-2 px-4 outline-none text-base' autoComplete='off' placeholder='email' required/>
                     </div>
-                    <div className='flex flex-col my-4'>
-                        <label htmlFor="password" className='my-2 text-[17px]'>Password</label>
-                        <input type="password" name="password" id="password" className='border rounded py-2 px-4 outline-none text-base' autoComplete='off' placeholder='password' />
+                    <div className='my-4'>
+                        <label htmlFor="password" className='my-2 text-[17px] block'>Password</label>
+                        <div className='relative w-full'>
+                        <input type={showPassword ? "text" : "password"} name="password" id="password" className='border-b-2 w-full rounded py-2 px-4 outline-none text-base' autoComplete='off' placeholder='password' />
+                        <span className='absolute top-3 right-3'>
+                            {
+                               showPassword ? <AiFillEyeInvisible className='cursor-pointer' onClick={() => setShowPassword(!showPassword)}/> : <AiFillEye className='cursor-pointer' onClick={() => setShowPassword(!showPassword)}/>
+                            }
+                        </span>
+                        </div>
                     </div>
                     <p className='text-[#da4747]'></p> 
                    <div className='flex flex-col md:flex-row items-center gap-5'>
