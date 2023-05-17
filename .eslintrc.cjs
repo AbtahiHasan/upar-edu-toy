@@ -13,7 +13,9 @@ module.exports = {
     'no-undef': 0,
     'no-unused-vars': 0,
     'react/prop-types': 0,
+    'exhaustive-deps': 0,
+    'react-hooks/exhaustive-deps': 0,
+    'react-refresh/only-export-components': 0,
     'react/no-unescaped-entities': 0,
-    'react-refresh/only-export-components': 'warn',
   },
 }
