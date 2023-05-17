@@ -1,12 +1,16 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { IoMdClose } from "react-icons/io";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
+import { AiOutlineLogin } from "react-icons/ai";
+
 import logo from "/logo.png"
 import { useState } from "react";
+import { useAuth } from "../context/AuthProvider";
 
 
 const Navbar = () => {
     const [toggle, setToggle] = useState(false)
+    const {user, logOut} = useAuth()
     return (
         <nav className="container flex justify-between py-4">
             <div className="flex items-center gap-3">
@@ -27,7 +31,14 @@ const Navbar = () => {
                     <li>
                         <NavLink to="/register" className={({ isActive }) => isActive ? "active px-5 rounded-full" : " px-5 rounded-full"}>Register</NavLink>
                     </li>
-                    
+                     <li>{
+                            user?.photoURL ? <img className="w-[35px] h-[35px] rounded-full" src={user?.photoURL} title={user.displayName} alt="" /> : ""
+                        }
+                    </li>
+                    <li>{
+                            user ? <button onClick={logOut} className="bg-[#289944] px-4 py-2 flex items-center gap-2 text-white "><AiOutlineLogin/> LogOut</button> : <button><Link className="flex items-center gap-2" to="/login"> <AiOutlineLogin/>  Login</Link></button>
+                        }
+                    </li>
                     
                 </ul>
         </nav>

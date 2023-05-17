@@ -7,5 +7,5 @@
 }
 
 .active {
-    @apply bg-[#00abe4] py-3
+    @apply bg-[#00abe4] py-3 text-white
 }
