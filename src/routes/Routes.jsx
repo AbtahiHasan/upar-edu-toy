@@ -8,6 +8,7 @@ import ErrorPage from "../pages/ErrorPage";
 import AllToys from "../pages/AllToys";
 import MyToys from "../pages/MyToys";
 import AddToy from "../pages/AddToy";
+import RequiredLogin from "../private/RequiredLogin";
 
 const Routes = createBrowserRouter([
     {
@@ -34,7 +35,7 @@ const Routes = createBrowserRouter([
             },
             {
                 path: "/add-toy",
-                element: <AddToy/>
+                element:  <RequiredLogin><AddToy/></RequiredLogin>
             },
             {
                 path: "/register",

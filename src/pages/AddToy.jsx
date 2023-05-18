@@ -1,5 +1,3 @@
-import { AiOutlineArrowLeft } from "react-icons/ai";
-import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useAuth } from "../context/AuthProvider";
 
