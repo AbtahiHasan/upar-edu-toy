@@ -4,11 +4,59 @@ import { useAuth } from "../context/AuthProvider";
 const AddToy = () => {
 
     const {user} = useAuth()
+
+
+    const addNewToy = (e) => {
+        e.preventDefault()
+        const form = e.target 
+           const photo_url = form.toy_image.value
+           const name = form.name.value
+           const seller_name = form.seller_name.value
+           const seller_email = form.email.value
+           const sub_category = form.sub_category.value
+           const price = form.price.value
+           const rating = form.rating.value
+           const quantity = form.quantity.value
+           const description =form.description.value
+
+        const toy = {
+            photo_url,
+            name,
+            seller_name,
+            seller_email,
+            sub_category,
+            price,
+            rating,
+            quantity,
+            description
+          }
+
+        fetch("https://upar-edu-toy.vercel.app/add-toy", {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(toy)
+        })
+        .then(res => res.json()) 
+        .then(data => {
+            if(data.insertedId) {
+                Swal.fire({
+                    title: '',
+                    text: "Data Inserted Successfully!",
+                    icon: 'success',
+                    confirmButtonColor: '#07CC66',
+                    confirmButtonText: 'ok'
+                  })
+                
+            }
+        })
+    }
    
     return (
         <main>
             <hr className="w-full my-3" />
-            <form className="px-[100px] py-5" >
+            <form onSubmit={addNewToy} className="px-[100px] py-5" >
             <div className="text-center my-3">
                         <h2 className="text-2xl font-bold">Add New Toy</h2>
                     </div>      

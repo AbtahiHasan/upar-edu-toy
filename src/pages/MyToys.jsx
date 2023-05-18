@@ -7,7 +7,7 @@ const MyToys = () => {
     const {user} = useAuth()
 
 
-    const url = `http://localhost:5000/seller?email=${user?.email}`;
+    const url = `https://upar-edu-toy.vercel.app/seller?email=${user?.email}`;
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
