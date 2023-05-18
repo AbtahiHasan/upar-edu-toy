@@ -9,7 +9,7 @@ const TobularFormToyCard = () => {
             <td className='py-4'>Shoririar</td>
             <td className='py-4'>$50</td>
             <td className='py-4'>50</td>
-            <td ><Link className="active px-4 rounded-full" to={`/${"_id"}`}>View Details</Link></td>
+            <td ><Link className="active px-4 rounded-full" to={`/toy/${"_id"}`}>View Details</Link></td>
         </tr>
     );
 };
