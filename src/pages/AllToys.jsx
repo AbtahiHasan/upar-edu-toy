@@ -9,9 +9,7 @@ const AllToys = () => {
         .then(res => res.json())
         .then(data => setToys(data))
     }, [])
-    const deleteToy = () => {
-        console.log("delete")
-    }
+  
     return (
         <main className="container">
             <div className='mt-[50px] overflow-x-auto'>
@@ -28,7 +26,7 @@ const AllToys = () => {
                     </thead>
                     <tbody>
                         {
-                            toys.map(toy => <TobularFormToyCard key={toy._id} toy={toy} deleteToy={deleteToy}/>)
+                            toys.map(toy => <TobularFormToyCard key={toy._id} toy={toy} />)
                         }
                     </tbody>
                 </table>

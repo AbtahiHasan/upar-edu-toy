@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import TobularFormToyCard from "../components/TobularFormToyCard";
 import { useAuth } from "../context/AuthProvider";
+import TobularFormMyToyCard from "../components/TobularFormMyToyCard";
 
 const MyToys = () => {
     const [toys, setToys] = useState([])
@@ -32,7 +32,7 @@ const MyToys = () => {
                     </thead>
                     <tbody>
                         {
-                            toys.map(toy => <TobularFormToyCard key={toy._id} toy={toy} deleteToy={deleteToy}/>)
+                            toys.map(toy => <TobularFormMyToyCard key={toy._id} toy={toy} deleteToy={deleteToy}/>)
                         }
                     </tbody>
                 </table>

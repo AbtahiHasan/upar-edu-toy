@@ -22,12 +22,12 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
         const profileUrl = form.profile.value;
-        const confirmPassword = form.confirmPassword.value
+
 
         setError(null)
         setSuccess(null)
 
-        if(!name || !profileUrl || !email || !password || !confirmPassword) {
+        if(!name || !profileUrl || !email || !password) {
             setError("Cannot leave any field empty")
             return
         } 
@@ -36,10 +36,7 @@ const Register = () => {
             setError("password at least 6 character")
             return
         }
-        if(password !== confirmPassword) {
-            setError("password not matched")
-            return
-        }
+       
         
 
         createUser(email, password) 
