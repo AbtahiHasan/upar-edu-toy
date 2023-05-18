@@ -3,6 +3,7 @@ import { useAuth } from "../context/AuthProvider";
 import TobularFormMyToyCard from "../components/TobularFormMyToyCard";
 
 const MyToys = () => {
+    const [deleteOk, setDeleteOk] = useState(0)
     const [toys, setToys] = useState([])
     const {user} = useAuth()
 
@@ -12,13 +13,18 @@ const MyToys = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => setToys(data))
-    }, [url]);
+    }, [url, deleteOk]);
     const deleteToy = (id) => {
         fetch(`https://upar-edu-toy.vercel.app/delete/${id}`, {
             method: "DELETE"
         })
         .then(res => res.json())
-        .then((data) => console.log(data))
+        .then((data) =>  {
+            console.log(data)
+            if(data.deletedCount > 0) {
+                setDeleteOk(deleteOk + 1)
+            }
+        })
     }
     return (
         <main className="container">
