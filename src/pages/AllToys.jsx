@@ -8,8 +8,8 @@ const AllToys = () => {
         console.log("delete")
     }
     return (
-        <div className='mt-[50px]'>
-            <table className='w-full my-10 container'>
+        <div className='mt-[50px] overflow-x-auto'>
+            <table className='my-10 min-w-[960px] mx-auto'>
                 <thead className="bg-slate-200">
                     <tr>
                         <th className='p-4'>Seller</th>

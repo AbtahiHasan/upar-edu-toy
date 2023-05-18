@@ -7,7 +7,7 @@ import logo from "/logo.png"
 const Footer = () => {
     return (
 
-      <footer  className="relative rounded-tr-[70px] rounded-tl-[70px] z-10 bg-[#dfe8ec] mt-[220px] md:mt-[140px] pt-20 pb-10 lg:pt-[120px]  lg:pb-20 px-3 ">
+      <footer  className="relative rounded-tr-[70px] rounded-tl-[70px] z-10 bg-[#dfe8ec] mt-[350px] md:mt-[140px] pt-20 pb-10 lg:pt-[120px]  lg:pb-20 px-3 ">
         <div className="container mx-auto">
           <div className="-mx-4 grid md:grid-cols-4">
             <div className="w-full px-4">
