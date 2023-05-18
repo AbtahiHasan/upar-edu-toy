@@ -1,11 +1,65 @@
 
 import { Link } from 'react-router-dom';
 import bgImage from '/toyBanner.jpeg'
+import {  updateProfile } from 'firebase/auth';
 
+import { useAuth } from '../context/AuthProvider';
+import { useState } from 'react';
+    
+    
 
 
 const Register = () => {
     
+  
+    const {createUser} = useAuth()
+    const [error, setError] = useState(null)
+    const [success, setSuccess] = useState(null)
+    const hendleForm = (e) => {
+        e.preventDefault()
+        const form = e.target
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        const profileUrl = form.profile.value;
+        const confirmPassword = form.confirmPassword.value
+
+        setError(null)
+        setSuccess(null)
+
+        if(!name || !profileUrl || !email || !password || !confirmPassword) {
+            setError("Cannot leave any field empty")
+            return
+        } 
+        
+        if(password.length < 6) {
+            setError("password at least 6 character")
+            return
+        }
+        if(password !== confirmPassword) {
+            setError("password not matched")
+            return
+        }
+        
+
+        createUser(email, password) 
+        .then ((result) => {
+            updateProfile(result.user, {
+                displayName: name,
+                photoURL: profileUrl
+            })
+           form.reset()
+
+           setSuccess("Registration successfull")
+
+        }) 
+        .catch(error => {
+            
+        })
+    }
+
+
+
 
 
     return (
@@ -19,7 +73,7 @@ const Register = () => {
                 <h2 className='text-3xl font-bold'>Create An Account</h2>
 
                 <p className='mt-[8px]'>Already have an account? <Link to="/login" className='text-[#1f32dd]'>Login</Link></p>     
-                <form>
+                <form onSubmit={hendleForm}>
                     <div className='flex flex-col my-3'>
                         <label htmlFor="name">Name</label>
                         <input type="text" name="name" id="name" className='border rounded w-full p-2 text-base outline-none' autoComplete='off' placeholder='Name' />
@@ -36,6 +90,8 @@ const Register = () => {
                         <label htmlFor="password" >Password</label>
                         <input type="password" name="password" id="password" className='border w-full rounded p-2 text-base outline-none' autoComplete='off' placeholder='password' />
                     </div> 
+                    <p className='text-[#da4747]'>{error && error}</p>
+                    <p className='text-[#399d23]'>{success && success}</p>
 
                     <button type='submit' className='bg-[#00abe4]  p-2  rounded-xl text-white w-full  text-[21px] '>Sign Up</button>         
                     

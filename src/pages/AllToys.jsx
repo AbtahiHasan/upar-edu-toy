@@ -1,9 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import TobularFormToyCard from "../components/TobularFormToyCard";
 
 const AllToys = () => {
-    const [toys, setToys] = useState(["0", "0", "0"])
+    const [toys, setToys] = useState([])
 
+    useEffect(() => {
+        fetch("https://upar-edu-toy.vercel.app/toys")
+        .then(res => res.json())
+        .then(data => setToys(data))
+    }, [])
     const deleteToy = () => {
         console.log("delete")
     }
