@@ -4,7 +4,8 @@ import { MdOutlineModeEditOutline, MdClose } from "react-icons/md";
 
 
 
-const TobularFormMyToyCard = ({toy, deleteToy}) => {
+
+const TobularFormMyToyCard = ({toy, deleteToy, setToys}) => {
     const {_id, name, seller_name, sub_category, price, quantity} = toy
     return (
         <tr className='border-b-2 w-full text-center'>

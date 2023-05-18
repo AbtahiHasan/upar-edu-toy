@@ -13,8 +13,12 @@ const MyToys = () => {
             .then(res => res.json())
             .then(data => setToys(data))
     }, [url]);
-    const deleteToy = () => {
-        console.log("delete")
+    const deleteToy = (id) => {
+        fetch(`https://upar-edu-toy.vercel.app/delete/${id}`, {
+            method: "DELETE"
+        })
+        .then(res => res.json())
+        .then((data) => console.log(data))
     }
     return (
         <main className="container">
@@ -32,7 +36,7 @@ const MyToys = () => {
                     </thead>
                     <tbody>
                         {
-                            toys.map(toy => <TobularFormMyToyCard key={toy._id} toy={toy} deleteToy={deleteToy}/>)
+                            toys.map(toy => <TobularFormMyToyCard key={toy._id} toy={toy} deleteToy={deleteToy} setToys={setToys}/>)
                         }
                     </tbody>
                 </table>

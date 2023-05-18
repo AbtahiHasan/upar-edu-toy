@@ -18,7 +18,7 @@ const Navbar = () => {
             </Link>
             <span className="lg:hidden text-xl">
                     {
-                       toggle ? <IoMdClose onClick={() => setToggle(!toggle)} /> : <HiOutlineMenuAlt2  onClick={() => setToggle(!toggle)} />
+                       toggle ? <IoMdClose className="cursor-pointer" onClick={() => setToggle(!toggle)} /> : <HiOutlineMenuAlt2 className="cursor-pointer"  onClick={() => setToggle(!toggle)} />
                     }
                 </span>
                 <ul className={`flex items-center duration-200 z-50 flex-col py-5 lg:p-0 text-white bg-opacity-80 lg:text-black top-14 bg-black lg:bg-transparent w-full lg:w-auto lg:flex-row gap-3 absolute lg:static ${toggle ? "left-0" : "-left-full"}`}>
@@ -41,7 +41,7 @@ const Navbar = () => {
                     </li>
                     
                      <li>{
-                            user?.photoURL ? <img className="w-[35px] h-[35px] rounded-full" src={user?.photoURL} title={user.displayName} alt="" /> : ""
+                            user?.photoURL ? <img className="w-[35px] h-[35px] rounded-full cursor-pointer" src={user?.photoURL} title={user.displayName} alt="" /> : ""
                         }
                     </li>
                     <li>{

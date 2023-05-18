@@ -45,7 +45,7 @@ const AddToy = () => {
                     title: '',
                     text: "Data Inserted Successfully!",
                     icon: 'success',
-                    confirmButtonColor: '#07CC66',
+                    confirmButtonColor: '#00abe4',
                     confirmButtonText: 'ok'
                   })
                 
