@@ -33,6 +33,7 @@ const ToyDetails = () => {
                      emptySymbol={<AiOutlineStar className="text-[#ff9529]"/>}
                      placeholderSymbol={<AiFillStar className="text-[#ff9529]"/>}
                      fullSymbol={<AiFillStar className="text-[#ff9529]"/>}
+                     readonly
                 /> <span>4.8</span>
                 </p>
 
