@@ -16,12 +16,12 @@ const Navbar = () => {
             <Link className="flex items-center gap-3">
             <img className="h-[35px]" src={logo} alt="" /> <h3 className="text-2xl font-bold">UparEduToy</h3>
             </Link>
-            <span className="md:hidden text-xl">
+            <span className="lg:hidden text-xl">
                     {
                        toggle ? <IoMdClose onClick={() => setToggle(!toggle)} /> : <HiOutlineMenuAlt2  onClick={() => setToggle(!toggle)} />
                     }
                 </span>
-                <ul className={`flex items-center duration-200 z-50 flex-col py-5 md:p-0 text-white bg-opacity-80 md:text-black top-14 bg-black md:bg-transparent w-full md:w-auto md:flex-row gap-3 absolute md:static ${toggle ? "left-0" : "-left-full"}`}>
+                <ul className={`flex items-center duration-200 z-50 flex-col py-5 lg:p-0 text-white bg-opacity-80 lg:text-black top-14 bg-black lg:bg-transparent w-full lg:w-auto lg:flex-row gap-3 absolute lg:static ${toggle ? "left-0" : "-left-full"}`}>
                     <li>
                         <NavLink onClick={() => setToggle(!toggle)} to="/" className={({ isActive }) => isActive ? "active px-5 rounded-full" : " px-5 rounded-full"}>Home</NavLink>
                     </li>

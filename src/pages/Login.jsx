@@ -13,7 +13,6 @@ const Login = () => {
     const [showPassword, setShowPassword] = useState(true)
     const navigate = useNavigate();
     const location = useLocation();
-    console.log('login page location', location)
     const from = location.state?.from?.pathname || '/'
     const {signIn, signInWithGoogle} = useAuth()
     const [error, setError] = useState(null)
@@ -61,12 +60,12 @@ const Login = () => {
                 <div className='absolute w-full h-[88vh]  -z-20'>
                     <img className='w-full object-cover h-full ' src={bgImage} alt="" />       
                 </div>
-                <section className='container flex flex-col-reverse md:flex-row items-center w-full h-[70vh] gap-5'>
+                <section className='container flex  items-center w-full h-[70vh] gap-5'>
                 
 
-                <section className='rounded-xl p-[25px] mt-10 ml-auto md:w-1/2'>
-                <h2 className='text-3xl'>Login.</h2>
-                <p className='mt-[8px] '>upar edu toy? <Link to="/register" className='text-[#1f32dd]'>Create New Account</Link></p>
+                <section className=' p-[25px] mt-10 ml-auto md:w-1/2'>
+                <h2 className='text-3xl font-bold'>Login.</h2>
+                <p className='mt-[8px] '>Don't Have An Account? <Link to="/register" className='text-[#1f32dd]'>Create New Account</Link></p>
                 <form onSubmit={hendleForm}>
                     <div className='flex flex-col my-4'>
                         <label htmlFor="email" className='my-2 text-[17px]'>Email</label>
@@ -87,7 +86,7 @@ const Login = () => {
                    <div className='flex flex-col md:flex-row items-center gap-5'>
                    <button type='submit' className='bg-[#00abe4]  p-2  rounded-full text-white w-full  text-[21px] '>Login</button>         
                     
-                    <button onClick={handelGoogle} className=' p-2 border border rounded-full w-full flex justify-center items-center gap-[6px] '><FcGoogle className='text-[32px]'/><span>Continue with Google</span></button>  
+                    <button onClick={handelGoogle} className=' p-2 border rounded-full w-full flex justify-center items-center gap-[6px] '><FcGoogle className='text-[32px]'/><span>Continue with Google</span></button>  
                    </div>
 
                 </form>
