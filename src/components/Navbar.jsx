@@ -25,12 +25,21 @@ const Navbar = () => {
                     <li>
                         <NavLink onClick={() => setToggle(!toggle)} to="/" className={({ isActive }) => isActive ? "active px-5 rounded-full" : " px-5 rounded-full"}>Home</NavLink>
                     </li>
+                   
+
+                    <li>
+                        <NavLink onClick={() => setToggle(!toggle)} to="/all-toys" className={({ isActive }) => isActive ? "active px-5 rounded-full" : " px-5 rounded-full"}>All Toys</NavLink>
+                    </li>
+                    <li>
+                        <NavLink onClick={() => setToggle(!toggle)} to="/my-toys" className={({ isActive }) => isActive ? "active px-5 rounded-full" : " px-5 rounded-full"}>My Toys</NavLink>
+                    </li>
+                    <li>
+                        <NavLink onClick={() => setToggle(!toggle)} to="/add-toy" className={({ isActive }) => isActive ? "active px-5 rounded-full" : " px-5 rounded-full"}>Add Toy</NavLink>
+                    </li>
                     <li>
                         <NavLink onClick={() => setToggle(!toggle)} to="/blog" className={({ isActive }) => isActive ? "active px-5 rounded-full" : " px-5 rounded-full"}>Blog</NavLink>
                     </li>
-                    <li>
-                        <NavLink onClick={() => setToggle(!toggle)} to="/register" className={({ isActive }) => isActive ? "active px-5 rounded-full" : " px-5 rounded-full"}>Register</NavLink>
-                    </li>
+                    
                      <li>{
                             user?.photoURL ? <img className="w-[35px] h-[35px] rounded-full" src={user?.photoURL} title={user.displayName} alt="" /> : ""
                         }

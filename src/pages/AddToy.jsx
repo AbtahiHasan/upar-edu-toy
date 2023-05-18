@@ -1,6 +1,6 @@
 
 
-const Header = () => {
+const AddToy = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default AddToy;
