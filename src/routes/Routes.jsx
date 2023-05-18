@@ -26,12 +26,12 @@ const Routes = createBrowserRouter([
             },
             {   
                 path : "/all-toys",
-                element: <AllToys/>
+                element: <RequiredLogin><AllToys/></RequiredLogin>
 
             },
             {
                 path: "/my-toys",
-                element: <MyToys/>
+                element: <RequiredLogin><MyToys/></RequiredLogin>
             },
             {
                 path: "/add-toy",
