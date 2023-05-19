@@ -30,21 +30,21 @@ const SubCategoryTap = () => {
                 </TabList>
 
                 <TabPanel>
-                    <section className='grid grid-cols-2 gap-5'>
+                    <section className='grid md:grid-cols-2 gap-5'>
                         {
                             activeTapData.category_name === "math learning toy" && activeTapData.subCategories.map(subCategory => <TapCard key={subCategory._id} subCategory={subCategory} />)
                         }
                     </section>
                 </TabPanel>
                 <TabPanel>
-                    <section className='grid grid-cols-2 gap-5'>
+                    <section className='grid md:grid-cols-2 gap-5'>
                             {
                                 activeTapData.category_name === "engineering kits" && activeTapData.subCategories.map(subCategory => <TapCard key={subCategory._id} subCategory={subCategory} />)
                             }
                     </section>
                 </TabPanel>
                 <TabPanel >
-                    <section className="grid grid-cols-2 gap-5">
+                    <section className="grid md:grid-cols-2 gap-5">
                         {
                             activeTapData.category_name === "science kits" && activeTapData.subCategories.map(subCategory => <TapCard key={subCategory._id} subCategory={subCategory} />)
                         }
