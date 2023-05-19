@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useAuth } from "../context/AuthProvider";
 import TobularFormMyToyCard from "../components/TobularFormMyToyCard";
+import Swal from "sweetalert2";
 
 const MyToys = () => {
     const [deleteOk, setDeleteOk] = useState(0)
@@ -26,6 +27,13 @@ const MyToys = () => {
             console.log(data)
             if(data.deletedCount > 0) {
                 setDeleteOk(deleteOk + 1)
+                Swal.fire({
+                    title: '',
+                    text: "delete Successfully!",
+                    icon: 'success',
+                    confirmButtonColor: '#00abe4',
+                    confirmButtonText: 'ok'
+                  })
             }
         })
         }
