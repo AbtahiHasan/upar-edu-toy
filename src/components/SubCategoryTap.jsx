@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import TapCard from './TapCard';
@@ -13,6 +13,13 @@ const SubCategoryTap = () => {
         .then(res => res.json())
         .then(data => setActiveTapData(data))
     }
+
+    useEffect(() => {
+        fetch("https://upar-edu-toy.vercel.app/sub-category?category=math learning toy")
+        .then(res => res.json())
+        .then(data => setActiveTapData(data))
+    },[])
+
     return (
        <main className='mt-[140px]'>
              <Tabs>
