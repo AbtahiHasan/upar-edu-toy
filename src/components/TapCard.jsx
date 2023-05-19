@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const TapCard = ({subCategory}) => {
     const {_id, photo_url, name, price, rating} = subCategory
     return (
-        <article className='grid grid-cols-3 gap-3 p-5 border rounded-md '>         
+        <article data-aos="zoom-in" className='grid grid-cols-3 gap-3 p-5 border rounded-md '>         
                 <figure><img className="h-52" src={photo_url} alt="toys image"/></figure>
                 <div className="col-span-2 relative">
                   <h2 className="text-xl font-bold">{name}</h2>

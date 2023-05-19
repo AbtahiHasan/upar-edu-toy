@@ -39,7 +39,7 @@ const Gallery = () => {
                 {
                     data.map((img, i )=> {
                         return (
-                            <article key={i} style={{background: img.bg}} className={`w-full rounded h-[400px] flex justify-center items-center`}>
+                            <article data-aos="fade-up" key={i} style={{background: img.bg}} className={`w-full rounded h-[400px] flex justify-center items-center`}>
                             
                                 <img className="h-[300px]" src={img.image} alt="" />
                             </article>
