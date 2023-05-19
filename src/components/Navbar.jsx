@@ -14,7 +14,7 @@ const Navbar = () => {
     return (
         <nav className="container flex justify-between py-4">
             <Link className="flex items-center gap-3">
-            <img className="h-[35px]" src={logo} alt="" /> <h3 className="text-2xl font-bold">UparEduToy</h3>
+            <img className="h-[35px]" src={logo} alt="" /> <h3 className="text-2xl font-bold"><span className="text-[#FF6D60]">Upar</span><span className="text-[#00abe4]">Edu</span><span className="text-[#F7D060]">Toy</span></h3>
             </Link>
             <span className="lg:hidden text-xl">
                     {

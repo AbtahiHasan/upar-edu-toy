@@ -25,11 +25,11 @@ const Gallery = () => {
         },
         {
             image: img5,
-            bg: "#F45050"
+            bg: "#19A7CE"
         },
         {
             image: img6,
-            bg: "#19A7CE"
+            bg: "#F45050"
         }
     ]
     return (
