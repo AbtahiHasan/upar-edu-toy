@@ -31,10 +31,10 @@ const Navbar = () => {
                         <NavLink onClick={() => setToggle(!toggle)} to="/all-toys" className={({ isActive }) => isActive ? "active px-5 rounded-full" : " px-5 rounded-full"}>All Toys</NavLink>
                     </li>
                     <li>
-                        <NavLink onClick={() => setToggle(!toggle)} to="/my-toys" className={({ isActive }) => isActive ? "active px-5 rounded-full" : " px-5 rounded-full"}>My Toys</NavLink>
+                        { user?.email && <NavLink onClick={() => setToggle(!toggle)} to="/my-toys" className={({ isActive }) => isActive ? "active px-5 rounded-full" : " px-5 rounded-full"}>My Toys</NavLink>}
                     </li>
                     <li>
-                        <NavLink onClick={() => setToggle(!toggle)} to="/add-toy" className={({ isActive }) => isActive ? "active px-5 rounded-full" : " px-5 rounded-full"}>Add Toy</NavLink>
+                        { user?.email && <NavLink onClick={() => setToggle(!toggle)} to="/add-toy" className={({ isActive }) => isActive ? "active px-5 rounded-full" : " px-5 rounded-full"}>Add Toy</NavLink>}
                     </li>
                     <li>
                         <NavLink onClick={() => setToggle(!toggle)} to="/blog" className={({ isActive }) => isActive ? "active px-5 rounded-full" : " px-5 rounded-full"}>Blog</NavLink>

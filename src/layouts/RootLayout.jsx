@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 const RootLayout = () => {
     useEffect(() => {
         Aos.init({
-            duration: 700,
+            duration: 300,
           })
     },[])
     return (
