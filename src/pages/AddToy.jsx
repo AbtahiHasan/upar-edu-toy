@@ -31,7 +31,7 @@ const AddToy = () => {
             description
           }
 
-        fetch("https://upar-edu-toy.web.app/add-toy", {
+        fetch("https://upar-edu-toy.vercel.app/add-toy", {
             method: "POST",
             headers: {
                 "content-type": "application/json"
