@@ -34,7 +34,7 @@ const ToyDetails = () => {
                      placeholderSymbol={<AiFillStar className="text-[#ff9529]"/>}
                      fullSymbol={<AiFillStar className="text-[#ff9529]"/>}
                      readonly
-                /> <span>4.8</span>
+                /> <span>{rating}</span>
                 </p>
 
                 <p className="my-3"><span className="font-bold">Quantity:</span> {quantity}</p>
