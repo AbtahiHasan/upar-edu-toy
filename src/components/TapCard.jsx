@@ -11,7 +11,7 @@ const TapCard = ({subCategory}) => {
                 <figure><img className="h-52" src={photo_url} alt="toys image"/></figure>
                 <div className="col-span-2 relative">
                   <h2 className="text-xl font-bold">{name}</h2>
-                  <p>Price: {price}</p>
+                  <p>Price: ${price}</p>
                   <p className="my-3 flex items-center gap-3">
                 <Rating
                      placeholderRating={rating}
@@ -19,7 +19,7 @@ const TapCard = ({subCategory}) => {
                      placeholderSymbol={<AiFillStar className="text-[#ff9529]"/>}
                      fullSymbol={<AiFillStar className="text-[#ff9529]"/>}
                      readonly
-                /> <span>4.8</span>
+                /> <span>{rating}</span>
                 </p>
                   <div className="absolute bottom-2 left-0">
                     

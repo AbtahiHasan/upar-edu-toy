@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 
 
 const TopToysCard = ({toy}) => {
-    const {_id, name,photo_url, rating, seller_name, sub_category, price, quantity} = toy
+    const {_id, name,photo_url, rating, price} = toy
     return (
         <article data-aos="fade-up" className='grid grid-cols-3 gap-3 p-5 border rounded-md '>         
                 <figure><img className="h-52" src={photo_url} alt="toys image"/></figure>
                 <div className="col-span-2 relative">
                   <h2 className="text-xl font-bold">{name}</h2>
-                  <p>Price: {price}</p>
+                  <p>Price: ${price}</p>
                   <p className="my-3 flex items-center gap-3">
                 <Rating
                      placeholderRating={rating}
