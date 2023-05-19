@@ -2,8 +2,10 @@ import Swal from "sweetalert2";
 import { useAuth } from "../context/AuthProvider";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import useTitle from "../hooks/useTitle";
 
 const EditToy = () => {    
+    useTitle("Edit Toy")
     const {user} = useAuth()
     const {id} = useParams()
     const [toy, setToy] = useState({})

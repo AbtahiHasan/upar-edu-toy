@@ -2,8 +2,10 @@ import { useEffect, useState } from "react";
 import { useAuth } from "../context/AuthProvider";
 import TobularFormMyToyCard from "../components/TobularFormMyToyCard";
 import Swal from "sweetalert2";
+import useTitle from "../hooks/useTitle";
 
 const MyToys = () => {
+    useTitle("My Toys")
     const [deleteOk, setDeleteOk] = useState(0)
     const [toys, setToys] = useState([])
     const {user} = useAuth()

@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import TobularFormToyCard from "../components/TobularFormToyCard";
 import { FiSearch } from "react-icons/fi";
+import useTitle from "../hooks/useTitle";
 
 const AllToys = () => {
+    useTitle("All Toys")
     const [toys, setToys] = useState([])
 
     useEffect(() => {

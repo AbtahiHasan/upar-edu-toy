@@ -1,7 +1,9 @@
 import Swal from "sweetalert2";
 import { useAuth } from "../context/AuthProvider";
+import useTitle from "../hooks/useTitle";
 
 const AddToy = () => {
+    useTitle("Add Toy")
 
     const {user} = useAuth()
 

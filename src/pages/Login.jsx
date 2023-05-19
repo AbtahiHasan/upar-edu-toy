@@ -4,12 +4,14 @@ import bgImage from '/toyBanner.jpeg'
 import { useState } from 'react';
 import { AiFillEyeInvisible,AiFillEye  } from "react-icons/ai";
 import { useAuth } from '../context/AuthProvider';
+import useTitle from "../hooks/useTitle";
 
 
 
 
 
 const Login = () => {
+    useTitle("Login")
     const [showPassword, setShowPassword] = useState(true)
     const navigate = useNavigate();
     const location = useLocation();

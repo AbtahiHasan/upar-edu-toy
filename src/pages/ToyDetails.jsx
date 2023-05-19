@@ -2,8 +2,10 @@ import Rating from "react-rating";
 import { useParams } from "react-router-dom";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import { useEffect, useState } from "react";
+import useTitle from "../hooks/useTitle";
 
 const ToyDetails = () => {
+    useTitle("Toy Details")
     const {id} = useParams()
     const [toy, setToy] = useState({})
     const {photo_url, name, seller_name, seller_email, rating, sub_category, price, quantity, description} = toy

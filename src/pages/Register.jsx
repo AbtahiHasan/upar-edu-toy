@@ -5,12 +5,13 @@ import {  updateProfile } from 'firebase/auth';
 
 import { useAuth } from '../context/AuthProvider';
 import { useState } from 'react';
+import useTitle from '../hooks/useTitle';
     
     
 
 
 const Register = () => {
-    
+    useTitle("Register")
   
     const {createUser} = useAuth()
     const [error, setError] = useState(null)
