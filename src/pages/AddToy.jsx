@@ -31,7 +31,7 @@ const AddToy = () => {
             description
           }
 
-        fetch("http://localhost:3000/add-toy", {
+        fetch("https://upar-edu-toy.web.app/add-toy", {
             method: "POST",
             headers: {
                 "content-type": "application/json"
