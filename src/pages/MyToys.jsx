@@ -15,7 +15,10 @@ const MyToys = () => {
             .then(data => setToys(data))
     }, [url, deleteOk]);
     const deleteToy = (id) => {
-        fetch(`https://upar-edu-toy.vercel.app/delete/${id}`, {
+        const isConfirmDelete = confirm("Are you suru you went to Delete")
+
+        if(isConfirmDelete) {
+            fetch(`https://upar-edu-toy.vercel.app/delete/${id}`, {
             method: "DELETE"
         })
         .then(res => res.json())
@@ -25,6 +28,8 @@ const MyToys = () => {
                 setDeleteOk(deleteOk + 1)
             }
         })
+        }
+        
     }
     return (
         <main className="container">
