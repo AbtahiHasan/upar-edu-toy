@@ -28,7 +28,7 @@ const Routes = createBrowserRouter([
             },
             {   
                 path : "/all-toys",
-                element: <RequiredLogin><AllToys/></RequiredLogin>
+                element: <AllToys/>
 
             },
             {
