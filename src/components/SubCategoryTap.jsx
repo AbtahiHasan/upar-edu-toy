@@ -3,6 +3,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import TapCard from './TapCard';
 
+
 const SubCategoryTap = () => {
     const [activeTapData, setActiveTapData] = useState({})
     
@@ -17,7 +18,7 @@ const SubCategoryTap = () => {
         .then(res => res.json())
         .then(data => setActiveTapData(data))
     },[])
-
+    
     return (
        <main className='mt-[140px] border-t-4 border-[#00abe4] p-5 relative'>
         <h2 className='text-center font-bold text-4xl mb-10 absolute -top-5 transform left-1/2 -translate-x-1/2'><span className='bg-[#00abe4] text-white py-3 px-2'>Toy</span><span className='border-2 bg-white border-[#00abe4] text-[#00abe4] py-3 px-2'>Categories</span></h2>
