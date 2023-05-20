@@ -5,10 +5,8 @@ import TapCard from './TapCard';
 
 const SubCategoryTap = () => {
     const [activeTapData, setActiveTapData] = useState({})
-    console.log(activeTapData)
+    
     const getSubCategoriesData = (category) => {
-        console.log(category)
-
         fetch(`https://upar-edu-toy.vercel.app/sub-category?category=${category}`)
         .then(res => res.json())
         .then(data => setActiveTapData(data))

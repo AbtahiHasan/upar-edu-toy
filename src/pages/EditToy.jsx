@@ -45,7 +45,7 @@ const EditToy = () => {
             description
           }
 
-        fetch(`http://localhost:3000/update/${id}`, {
+        fetch(`https://upar-edu-toy.vercel.app/update/${id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"
