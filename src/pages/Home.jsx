@@ -4,6 +4,7 @@ import TopToys from "../components/TopToys";
 import SubCategoryTap from "../components/SubCategoryTap";
 import useTitle from "../hooks/useTitle";
 import AgeBy from "../components/AgeBy";
+import Subscribe from "../components/Subscribe";
 
 
 const Home = () => {
@@ -17,6 +18,7 @@ const Home = () => {
                 <TopToys/>
                 <Gallery/>
                 <SubCategoryTap/>
+                <Subscribe/>
             </section>
             
         </main>
