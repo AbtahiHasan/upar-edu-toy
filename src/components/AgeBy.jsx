@@ -45,7 +45,7 @@ const AgeBy = () => {
                           effect={"coverflow"}
                          grabCursor={true}
                          centeredSlides={true}
-                         slidesPerView={"3"}
+                         slidesPerView={"2"}
                          coverflowEffect={{
                            rotate: 50,
                            stretch: 0,
