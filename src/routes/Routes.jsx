@@ -13,6 +13,7 @@ import ToyDetails from "../pages/ToyDetails";
 import EditToy from "../pages/EditToy";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
+import Shop from "../pages/Shop";
 
 const Routes = createBrowserRouter([
     {
@@ -32,6 +33,10 @@ const Routes = createBrowserRouter([
                 path : "/all-toys",
                 element: <AllToys/>
 
+            },
+            {
+                path: "/shop",
+                element: <Shop/>
             },
             {
                 path: "/my-toys",

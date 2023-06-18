@@ -1,7 +1,7 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { IoMdClose } from "react-icons/io";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
-import { AiOutlineLogin } from "react-icons/ai";
+import { AiOutlineLogin, AiOutlineShoppingCart } from "react-icons/ai";
 
 import logo from "/logo.png"
 import { useState } from "react";
@@ -11,6 +11,9 @@ import { useAuth } from "../context/AuthProvider";
 const Navbar = () => {
     const [toggle, setToggle] = useState(false)
     const {user, logOut} = useAuth()
+    const location = useLocation()
+    const path = location.pathname
+
     return (
         <nav className="container flex justify-between py-4">
             <Link className="flex items-center gap-1">
@@ -31,6 +34,9 @@ const Navbar = () => {
                         <NavLink onClick={() => setToggle(!toggle)} to="/all-toys" className={({ isActive }) => isActive ? "active px-5 rounded-full" : " px-5 rounded-full"}>All Toys</NavLink>
                     </li>
                     <li>
+                        <NavLink onClick={() => setToggle(!toggle)} to="/shop" className={({ isActive }) => isActive ? "active px-5 rounded-full" : " px-5 rounded-full"}>Shop</NavLink>
+                    </li>
+                    <li>
                         { user?.email && <NavLink onClick={() => setToggle(!toggle)} to="/my-toys" className={({ isActive }) => isActive ? "active px-5 rounded-full" : " px-5 rounded-full"}>My Toys</NavLink>}
                     </li>
                     <li>
@@ -39,8 +45,12 @@ const Navbar = () => {
                     <li>
                         <NavLink onClick={() => setToggle(!toggle)} to="/about" className={({ isActive }) => isActive ? "active px-5 rounded-full" : " px-5 rounded-full"}>About Us</NavLink>
                     </li>
+                    
                     <li>
                         <NavLink onClick={() => setToggle(!toggle)} to="/contact" className={({ isActive }) => isActive ? "active px-5 rounded-full" : " px-5 rounded-full"}>Contact</NavLink>
+                    </li>
+                    <li>
+                        {path === "/shop" && <NavLink onClick={() => setToggle(!toggle)} to="/cart" className={"relative"} ><AiOutlineShoppingCart className="text-2xl"/> <span className="absolute -top-5 left-5 text-white text-xs bg-[#00abe4] p-1 rounded-full">0</span> </NavLink>} 
                     </li>
                      <li>{
                             user?.photoURL ? <img className="w-[35px] h-[35px] rounded-full cursor-pointer" src={user?.photoURL} title={user.displayName} alt="" /> : ""
