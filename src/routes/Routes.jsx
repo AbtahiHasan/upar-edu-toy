@@ -12,6 +12,7 @@ import RequiredLogin from "../private/RequiredLogin";
 import ToyDetails from "../pages/ToyDetails";
 import EditToy from "../pages/EditToy";
 import About from "../pages/About";
+import Contact from "../pages/Contact";
 
 const Routes = createBrowserRouter([
     {
@@ -55,6 +56,10 @@ const Routes = createBrowserRouter([
             {
                 path: "/about",
                 element: <About/>
+            },
+            {
+                path: "/contact",
+                element: <Contact/>
             }
         ]
     }

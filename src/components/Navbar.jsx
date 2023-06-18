@@ -39,7 +39,9 @@ const Navbar = () => {
                     <li>
                         <NavLink onClick={() => setToggle(!toggle)} to="/about" className={({ isActive }) => isActive ? "active px-5 rounded-full" : " px-5 rounded-full"}>About Us</NavLink>
                     </li>
-                    
+                    <li>
+                        <NavLink onClick={() => setToggle(!toggle)} to="/contact" className={({ isActive }) => isActive ? "active px-5 rounded-full" : " px-5 rounded-full"}>Contact</NavLink>
+                    </li>
                      <li>{
                             user?.photoURL ? <img className="w-[35px] h-[35px] rounded-full cursor-pointer" src={user?.photoURL} title={user.displayName} alt="" /> : ""
                         }
