@@ -6,6 +6,7 @@ import useTitle from "../hooks/useTitle";
 import AgeBy from "../components/AgeBy";
 import Subscribe from "../components/Subscribe";
 import InstragramFeed from "../components/InstragramFeed";
+import Count from "../components/CountUp";
 
 
 const Home = () => {
@@ -18,6 +19,7 @@ const Home = () => {
                 <AgeBy/>
                 <TopToys/>
                 <Gallery/>
+                <Count/>
                 <SubCategoryTap/>
                 <InstragramFeed/>
                 <Subscribe/>
