@@ -7,6 +7,7 @@ import AgeBy from "../components/AgeBy";
 import Subscribe from "../components/Subscribe";
 import InstragramFeed from "../components/InstragramFeed";
 import Count from "../components/CountUp";
+import TrandingToy from "../components/TrandingToy";
 
 
 const Home = () => {
@@ -16,6 +17,7 @@ const Home = () => {
             <Banner/>
 
             <section className="container">
+                <TrandingToy/>
                 <AgeBy/>
                 <TopToys/>
                 <Gallery/>
