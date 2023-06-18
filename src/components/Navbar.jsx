@@ -37,7 +37,7 @@ const Navbar = () => {
                         { user?.email && <NavLink onClick={() => setToggle(!toggle)} to="/add-toy" className={({ isActive }) => isActive ? "active px-5 rounded-full" : " px-5 rounded-full"}>Add Toy</NavLink>}
                     </li>
                     <li>
-                        <NavLink onClick={() => setToggle(!toggle)} to="/blog" className={({ isActive }) => isActive ? "active px-5 rounded-full" : " px-5 rounded-full"}>Blog</NavLink>
+                        <NavLink onClick={() => setToggle(!toggle)} to="/about" className={({ isActive }) => isActive ? "active px-5 rounded-full" : " px-5 rounded-full"}>About Us</NavLink>
                     </li>
                     
                      <li>{
