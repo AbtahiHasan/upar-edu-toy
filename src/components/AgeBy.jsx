@@ -31,8 +31,8 @@ const AgeBy = () => {
     
     return (
         <main className="mt-[140px] border-t-4 border-[#00abe4] p-5 relative">
-                <h2 className='text-center font-bold text-4xl mb-10 absolute -top-5 transform left-1/2 -translate-x-1/2'><span className='bg-[#00abe4] text-white py-3 px-2'>By</span><span className='border-2 bg-white border-[#00abe4] text-[#00abe4] py-3 px-2'>Age</span></h2>
-                <section className="grid grid-cols-5 gap-3 mt-10">
+                <h2 className='whitespace-nowrap text-center font-bold text-2xl mb-10 absolute -top-5 transform left-1/2 -translate-x-1/2'><span className='bg-[#00abe4] text-white py-3 px-2'>By</span><span className='border-2 bg-white border-[#00abe4] text-[#00abe4] py-3 px-2'>Age</span></h2>
+                <section className="w-[1240px] overflow-x-auto grid grid-cols-5 gap-3 mt-10">
                     {
                         childrens.map((children, i) => {
                             return (
