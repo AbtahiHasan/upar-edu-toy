@@ -5,6 +5,7 @@ import SubCategoryTap from "../components/SubCategoryTap";
 import useTitle from "../hooks/useTitle";
 import AgeBy from "../components/AgeBy";
 import Subscribe from "../components/Subscribe";
+import InstragramFeed from "../components/InstragramFeed";
 
 
 const Home = () => {
@@ -18,6 +19,7 @@ const Home = () => {
                 <TopToys/>
                 <Gallery/>
                 <SubCategoryTap/>
+                <InstragramFeed/>
                 <Subscribe/>
             </section>
             

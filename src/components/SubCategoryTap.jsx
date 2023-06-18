@@ -14,7 +14,7 @@ const SubCategoryTap = () => {
     }
 
     useEffect(() => {
-        fetch("https://upar-edu-toy.vercel.app/sub-category?category=math learning toy")
+        fetch("https://upar-edu-toy.vercel.app/sub-category?category=math_learning_toy")
         .then(res => res.json())
         .then(data => setActiveTapData(data))
     },[])
@@ -25,29 +25,29 @@ const SubCategoryTap = () => {
              <section className='mt-10'>
              <Tabs>
                 <TabList>
-                  <Tab onClick={() => getSubCategoriesData("math learning toy")}>math learning toy</Tab>
-                  <Tab onClick={() => getSubCategoriesData("engineering kits")}>engineering kits</Tab>
-                  <Tab onClick={() => getSubCategoriesData("science kits")}>science kits</Tab>
+                  <Tab onClick={() => getSubCategoriesData("math_learning_toy")}>math learning toy</Tab>
+                  <Tab onClick={() => getSubCategoriesData("engineering_kits")}>engineering kits</Tab>
+                  <Tab onClick={() => getSubCategoriesData("science_kits")}>science kits</Tab>
                 </TabList>
 
                 <TabPanel>
                     <section className='grid md:grid-cols-2 gap-5'>
                         {
-                            activeTapData.category_name === "math learning toy" && activeTapData.subCategories.map(subCategory => <TapCard key={subCategory._id} subCategory={subCategory} />)
+                            activeTapData.category_name === "math_learning_toy" && activeTapData.subCategories.map(subCategory => <TapCard key={subCategory._id} subCategory={subCategory} />)
                         }
                     </section>
                 </TabPanel>
                 <TabPanel>
                     <section className='grid md:grid-cols-2 gap-5'>
                             {
-                                activeTapData.category_name === "engineering kits" && activeTapData.subCategories.map(subCategory => <TapCard key={subCategory._id} subCategory={subCategory} />)
+                                activeTapData.category_name === "engineering_kits" && activeTapData.subCategories.map(subCategory => <TapCard key={subCategory._id} subCategory={subCategory} />)
                             }
                     </section>
                 </TabPanel>
                 <TabPanel >
                     <section className="grid md:grid-cols-2 gap-5">
                         {
-                            activeTapData.category_name === "science kits" && activeTapData.subCategories.map(subCategory => <TapCard key={subCategory._id} subCategory={subCategory} />)
+                            activeTapData.category_name === "science_kits" && activeTapData.subCategories.map(subCategory => <TapCard key={subCategory._id} subCategory={subCategory} />)
                         }
                     </section>
                 </TabPanel> 
