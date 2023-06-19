@@ -7,7 +7,7 @@ const useCart = () => {
         queryKey: ["carts"],
         enabled: !loading,
         queryFn: async () => {
-            const res = await fetch(`http://localhost:3000/carts?email=${user?.email}`)
+            const res = await fetch(`https://upar-edu-toy.vercel.app/carts?email=${user?.email}`)
             const data = res.json()
             return data
         }

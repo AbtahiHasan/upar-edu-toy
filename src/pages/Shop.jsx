@@ -11,7 +11,7 @@ const Shop = () => {
     const {user} = useAuth()
     const {refetch} = useCart()
     useEffect(() => {
-        fetch("http://localhost:3000/toys")
+        fetch("https://upar-edu-toy.vercel.app/toys")
         .then(res => res.json())
         .then(data => setToys(data))
     },[])
@@ -33,7 +33,7 @@ const Shop = () => {
           email: user?.email
       }
       if(user?.email) {
-          fetch(`http://localhost:3000/add-to-carts`, {
+          fetch(`https://upar-edu-toy.vercel.app/add-to-carts`, {
               method: "POST",
               headers: {
                   "content-type": "application/json"

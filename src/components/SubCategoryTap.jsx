@@ -8,13 +8,13 @@ const SubCategoryTap = () => {
     const [activeTapData, setActiveTapData] = useState({})
     
     const getSubCategoriesData = (category) => {
-        fetch(`http://localhost:3000/sub-category?category=${category}`)
+        fetch(`https://upar-edu-toy.vercel.app/sub-category?category=${category}`)
         .then(res => res.json())
         .then(data => setActiveTapData(data))
     }
 
     useEffect(() => {
-        fetch("http://localhost:3000/sub-category?category=math_learning_toy")
+        fetch("https://upar-edu-toy.vercel.app/sub-category?category=math_learning_toy")
         .then(res => res.json())
         .then(data => setActiveTapData(data))
     },[])

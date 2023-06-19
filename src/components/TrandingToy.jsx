@@ -7,7 +7,7 @@ const TrandingToy = () => {
     const [trandingToy, setTrandingToy] = useState([])
 
     useEffect(() => {
-        fetch("http://localhost:3000/top-toys")
+        fetch("https://upar-edu-toy.vercel.app/top-toys")
         .then(res => res.json())
         .then(data => setTrandingToy(data))
     }, [])
