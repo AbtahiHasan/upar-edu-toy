@@ -6,12 +6,14 @@ import { AiOutlineLogin, AiOutlineShoppingCart } from "react-icons/ai";
 import logo from "/logo.png"
 import { useState } from "react";
 import { useAuth } from "../context/AuthProvider";
+import useCart from "../hooks/useCart";
 
 
 const Navbar = () => {
     const [toggle, setToggle] = useState(false)
     const {user, logOut} = useAuth()
     const location = useLocation()
+    const {carts} = useCart()
     const path = location.pathname
 
     return (
@@ -50,7 +52,7 @@ const Navbar = () => {
                         <NavLink onClick={() => setToggle(!toggle)} to="/contact" className={({ isActive }) => isActive ? "active px-5 rounded-full" : " px-5 rounded-full"}>Contact</NavLink>
                     </li>
                     <li>
-                        {path === "/shop" && <NavLink onClick={() => setToggle(!toggle)} to="/cart" className={"relative"} ><AiOutlineShoppingCart className="text-2xl"/> <span className="absolute -top-5 left-5 text-white text-xs bg-[#00abe4] p-1 rounded-full">0</span> </NavLink>} 
+                        {path === "/shop" && <NavLink onClick={() => setToggle(!toggle)} to="/cart" className={"relative"} ><AiOutlineShoppingCart className="text-2xl"/> <span className="absolute -top-5 left-5 text-white text-xs bg-[#00abe4] p-1 rounded-full">{carts.length || 0}</span> </NavLink>} 
                     </li>
                      <li>{
                             user?.photoURL ? <img className="w-[35px] h-[35px] rounded-full cursor-pointer" src={user?.photoURL} title={user.displayName} alt="" /> : ""

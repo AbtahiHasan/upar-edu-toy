@@ -15,7 +15,7 @@ const MyToys = () => {
 
 
     useEffect(() => {
-        fetch(`https://upar-edu-toy.vercel.app/seller?email=${user?.email}`)
+        fetch(`http://localhost:3000/seller?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setToys(data))
     }, [deleteOk]);
@@ -23,7 +23,7 @@ const MyToys = () => {
         const isConfirmDelete = confirm("Are you suru you went to Delete")
 
         if(isConfirmDelete) {
-            fetch(`https://upar-edu-toy.vercel.app/delete/${id}`, {
+            fetch(`http://localhost:3000/delete/${id}`, {
             method: "DELETE"
         })
         .then(res => res.json())
@@ -51,7 +51,7 @@ const MyToys = () => {
 
 
     useEffect(() => {
-        fetch(`https://upar-edu-toy.vercel.app/sort?sortby=${selectedOption.value}&email=${user.email}`)
+        fetch(`http://localhost:3000/sort?sortby=${selectedOption.value}&email=${user.email}`)
         .then(res => res.json())
         .then(data => setToys(data))
     },[selectedOption])

@@ -10,7 +10,7 @@ const ToyDetails = () => {
     const [toy, setToy] = useState({})
     const {photo_url, name, seller_name, seller_email, rating, sub_category, price, quantity, description} = toy
     const getToy = async () => {
-        const res = await fetch(`https://upar-edu-toy.vercel.app/toy/${id}`)
+        const res = await fetch(`http://localhost:3000/toy/${id}`)
         const data = await res.json()
         setToy(data)
     }

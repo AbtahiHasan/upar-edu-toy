@@ -8,7 +8,7 @@ const TopToys = () => {
     const [latestToys, setLatestToys] = useState([])
 
     useEffect(() => {
-        fetch("https://upar-edu-toy.vercel.app/top-toys")
+        fetch("http://localhost:3000/top-toys")
         .then(res => res.json())
         .then(data => setLatestToys(data))
     }, [])
